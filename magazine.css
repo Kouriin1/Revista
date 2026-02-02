@@ -1,0 +1,216 @@
+/* --- MAGAZINE MODE STYLES (Flipbook Effect) --- */
+
+/* Modo Revista Activo: Ocultamos el scroll normal y header/footer base */
+body.magazine-mode-active {
+    overflow: hidden; /* Lock scroll principal preserver */
+    height: 100vh;
+    width: 100vw;
+    background: #111; /* Fondo oscuro cinematográfico */
+}
+
+body.magazine-mode-active .navbar,
+body.magazine-mode-active .article-header,
+body.magazine-mode-active .back-link,
+body.magazine-mode-active footer,
+body.magazine-mode-active > .container {
+    display: none !important;
+}
+
+/* Wrapper principal del modo revista */
+#magazine-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5000;
+    background: #222;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenedor de "Slides" horizontal */
+.magazine-view {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    height: 100%;
+    width: 100%;
+    scrollbar-width: none; /* Firefox hide scrollbar */
+}
+
+.magazine-view::-webkit-scrollbar {
+    display: none; /* Chrome hide scrollbar */
+}
+
+/* Página Individual */
+.magazine-page {
+    flex: 0 0 100%; /* Ocupa todo el ancho */
+    height: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #333; /* Fondo detrás de la hoja */
+    perspective: 1000px;
+}
+
+/* Hoja de papel interna */
+.page-inner {
+    width: 100%;
+    max-width: 600px; /* Ancho máximo de hoja en PC */
+    height: 95%;
+    background: #FFFEFA; /* Color crema papel */
+    padding: 2rem 2rem;
+    border-radius: 4px; /* Bordes suaves de hoja */
+    box-shadow: 
+        inset 20px 0 50px rgba(0,0,0,0.05), /* Sombra de lomo (binding) */
+        0 10px 30px rgba(0,0,0,0.5); /* Sombra externa */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-y: auto; /* Permitir scroll interno si el texto es muy largo */
+    transition: all 0.5s ease-out; /* Transición suave para la animación */
+    transform: scale(0.9) rotateY(10deg); /* Estado inicial (fuera de foco) */
+    opacity: 0.6;
+}
+
+/* Estado ACTIVO (ANIMACIÓN BONITA al centrar) */
+.magazine-page.active-page .page-inner {
+    transform: scale(1) rotateY(0deg); /* Se endereza y crece */
+    opacity: 1;
+    box-shadow: 
+        inset 20px 0 50px rgba(0,0,0,0.05), 
+        0 20px 50px rgba(0,0,0,0.8); /* Sombra más fuerte al activar */
+}
+
+/* Encabezado y Pie de página de la hoja (decorativo) */
+.page-header {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: right;
+    letter-spacing: 2px;
+}
+
+.page-footer {
+    font-size: 0.7rem;
+    color: #ccc;
+    text-align: center;
+    margin-top: auto; /* Push to bottom */
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+/* Contenido dentro de la página */
+.page-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    text-align: justify;
+}
+
+.page-content h2 {
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.page-content p {
+    margin-bottom: 1.2rem;
+}
+
+/* Imágenes dentro de la revista */
+.page-content .article-image {
+    margin: 1rem 0;
+    float: none !important; /* Deshabilitar float en modo revista */
+    width: 100% !important;
+}
+
+.page-content img {
+    max-height: 40vh; /* Adaptable a la altura del móvil */
+    width: 100%;
+    object-fit: contain; /* Mejor que cover para no cortar diagramas */
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background: #f0f0f0;
+}
+
+.image-caption {
+    font-size: 0.8rem;
+    text-align: center;
+    color: #666;
+}
+
+/* Controles flotantes en modo revista */
+.magazine-controls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background: rgba(0,0,0,0.6);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    pointer-events: none;
+    animation: fadeOut 3s forwards 2s; /* Desaparece después de unos segundos */
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; }
+}
+
+.arrow {
+    display: inline-block;
+    animation: bounceRight 1.5s infinite;
+}
+
+@keyframes bounceRight {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(5px); }
+}
+
+/* Ajustes Responsive para Móvil Real */
+@media (max-width: 768px) {
+    .page-inner {
+        height: 100vh; /* Fallback */
+        height: 100dvh; /* Pantalla completa real en móvil modernos */
+        max-height: -webkit-fill-available;
+        border-radius: 0;
+        padding: 1.25rem 1rem; /* Menos padding lateral para aprovechar el ancho */
+        width: 100%;
+        max-width: 100%;
+        box-shadow: none; /* Quitar sombra en full screen */
+    }
+    
+    .magazine-page {
+        padding: 0; /* Sin bordes negros en móvil */
+    }
+    
+    .page-content {
+        font-size: 1.05rem; /* Texto un pelín más compacto */
+        line-height: 1.6;
+    }
+
+    .page-header {
+        margin-bottom: 1rem;
+        padding-bottom: 5px;
+    }
+
+    .magazine-toggle-btn {
+        display: none; 
+    }
+
+    /* Asegurar espacio seguro en iPhone X+ */
+    .page-footer {
+        padding-bottom: env(safe-area-inset-bottom, 20px); 
+    }
+}

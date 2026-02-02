@@ -20,6 +20,11 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Crucial para evitar barras blancas laterales */
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-main);
@@ -461,20 +466,43 @@ footer { background-color: var(--primary); color: var(--white); padding: 4rem 0;
     object-fit: cover;
 }
 
-/* --- Estilos "Tech/Neuro" para Israel --- */
+/* --- Estilos "Tech/Neuro" para Israel (Mejorado) --- */
 .content-module {
-    background: #ffffff;
-    border-left: 5px solid var(--primary);
-    padding: 2rem;
-    margin: 3rem 0;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    border-radius: 0 8px 8px 0;
+    background: linear-gradient(145deg, #ffffff, #f4f7f9);
+    border-left: 6px solid var(--primary);
+    padding: 3rem;
+    margin: 4rem 0;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Detalle decorativo de fondo (sutil) */
+.content-module::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: rgba(0,33,71,0.03);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.content-module > * {
+    position: relative;
+    z-index: 1;
 }
 
 .content-module h2 {
     color: var(--primary);
     margin-top: 0;
-    font-size: 1.6rem;
+    font-size: 2rem;
+    border-bottom: 2px solid rgba(0,0,0,0.05);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .pull-quote {
@@ -507,6 +535,12 @@ footer { background-color: var(--primary); color: var(--white); padding: 4rem 0;
     border-radius: 12px;
     margin-top: 4rem;
     text-align: center;
+}
+
+.interactive-callout h3 {
+    color: var(--white);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
 }
 
 .interactive-callout p {
