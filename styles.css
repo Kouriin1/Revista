@@ -188,6 +188,729 @@ footer { background-color: var(--primary); color: var(--white); padding: 4rem 0;
     .nav-links { display: none; }
 }
 
+/* --- Single Article Page Styles --- */
+.article-header {
+    background: linear-gradient(135deg, var(--primary) 0%, #060606 100%);
+    color: var(--white);
+    padding: 8rem 0 4rem;
+    text-align: center;
+    position: relative;
+}
+
+.article-header::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(var(--white) 1px, transparent 1px);
+    background-size: 40px 40px; opacity: 0.03;
+}
+
+.article-header h1 {
+    font-size: 3rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.article-meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    font-family: var(--font-sans);
+}
+
+.article-author-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent);
+}
+
+.article-author-name {
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.article-body {
+    max-width: 800px; /* Ancho óptimo para lectura */
+    margin: 4rem auto;
+    font-size: 1.1rem;
+    color: var(--text-main);
+}
+
+.article-body p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.article-body h2 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+/* Galería de Imágenes Referenciales */
+.article-gallery {
+    margin-top: 4rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding-top: 3rem;
+}
+
+.gallery-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    box-shadow: var(--shadow-card);
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 2rem;
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent);
+}
+
+/* --- Mejoras para Artículos Dinámicos (Estilo Revista Científica) --- */
+.article-body {
+    max-width: 900px; /* Un poco más ancho para acomodar imágenes laterales */
+    margin: 4rem auto;
+    font-size: 1.15rem; /* Un toque más grande para lectura cómoda */
+    line-height: 1.8;
+    color: var(--text-main);
+}
+
+.article-body p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Imágenes por defecto (Móvil y base) */
+.article-image {
+    margin: 2rem 0;
+    width: 100%;
+    text-align: center;
+}
+
+.article-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra más sutil y elegante */
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Estilos para Escritorio (Revista) */
+@media (min-width: 850px) {
+    .article-image.float-right {
+        float: right;
+        width: 45%;       /* Ocupa un poco menos de la mitad */
+        margin-left: 2.5rem;
+        margin-bottom: 1.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .article-image.float-left {
+        float: left;
+        width: 45%;
+        margin-right: 2.5rem;
+        margin-bottom: 1.5rem;
+        margin-top: 0.5rem;
+    }
+}
+
+/* Limpiar floats al final de secciones si es necesario */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.image-caption {
+    display: block;
+    margin-top: 0.8rem;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-style: italic;
+    font-family: var(--font-serif);
+}
+
+.author-bio {
+    background: #f8f9fa;
+    padding: 3rem;
+    border-radius: 4px;
+    margin-top: 6rem;
+    border-top: 1px solid var(--accent);
+    border-bottom: 1px solid var(--accent);
+    clear: both; /* Asegura que baje después de las imágenes flotantes */
+}
+
+.author-bio h3 {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.references-section {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px dashed #ccc;
+}
+
+.references-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.references-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.references-list li {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.references-list li::before {
+    content: "•";
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* --- Estilos de Variedad Editorial --- */
+.drop-cap::first-letter {
+    font-family: var(--font-serif);
+    font-size: 4.5rem;
+    font-weight: 700;
+    float: left;
+    margin-right: 0.8rem;
+    line-height: 1;
+    color: var(--primary);
+}
+
+.highlight-box {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 3rem;
+    margin: 4rem 0;
+    border-radius: 4px;
+    position: relative;
+}
+
+.highlight-box h4 {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    font-family: var(--font-sans);
+}
+
+.highlight-box p {
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+
+.full-width-image {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.full-width-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+/* --- Estilos "Tech/Neuro" para Israel --- */
+.content-module {
+    background: #ffffff;
+    border-left: 5px solid var(--primary);
+    padding: 2rem;
+    margin: 3rem 0;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border-radius: 0 8px 8px 0;
+}
+
+.content-module h2 {
+    color: var(--primary);
+    margin-top: 0;
+    font-size: 1.6rem;
+}
+
+.pull-quote {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-style: italic;
+    color: var(--accent);
+    text-align: center;
+    margin: 4rem auto;
+    max-width: 80%;
+    position: relative;
+    line-height: 1.4;
+}
+
+.pull-quote::before, .pull-quote::after {
+    content: "“";
+    font-size: 4rem;
+    color: rgba(197, 160, 89, 0.2);
+    position: absolute;
+    top: -2rem;
+}
+
+.pull-quote::before { left: -2rem; }
+.pull-quote::after { content: "”"; right: -2rem; top: auto; bottom: -4rem; }
+
+.interactive-callout {
+    background: linear-gradient(135deg, #002147 0%, #004080 100%);
+    color: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.interactive-callout p {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.1rem;
+}
+
+.interactive-callout strong {
+    color: var(--accent);
+}
+
+/* --- Estilos "Dialéctica" para Leina --- */
+.two-column-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin: 3rem 0;
+    align-items: center; /* Centrar verticalmente */
+}
+
+.column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.conclusion-section {
+    background-color: #f4f6f8;
+    padding: 3rem;
+    border-radius: 8px;
+    margin-top: 4rem;
+}
+
+.conclusion-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.conclusion-card {
+    background: white;
+    padding: 1.5rem;
+    border-left: 6px solid var(--accent);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.conclusion-card:hover {
+    transform: translateX(10px);
+}
+
+.conclusion-icon {
+    font-size: 1.5rem;
+    color: var(--primary);
+    background: rgba(0,33,71,0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* --- Estilos "Gamificación" para Lily --- */
+.vark-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem 0;
+    flex-wrap: wrap;
+}
+
+.vark-item {
+    text-align: center;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    width: 150px;
+    transition: transform 0.3s;
+}
+
+.vark-item:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: #f0f8ff;
+}
+
+.vark-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.game-level {
+    background: #fff;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-left: 4rem;
+}
+
+.game-level::before {
+    content: "LVL";
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 900;
+    color: var(--accent);
+    font-size: 0.8rem;
+    text-align: center;
+    background: #fdfdfd;
+    border: 2px solid var(--accent);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.level-title {
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.progress-bar-container {
+    background: #eee;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+    width: 0%; /* Se animará */
+    transition: width 1.5s ease-out;
+}
+
+.progress-label {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    line-height: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* --- Estilos "Inclusivo/Social" para Lisette --- */
+.accessible-text {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    color: #333;
+}
+
+.accessible-text p {
+    margin-bottom: 2rem;
+}
+
+.quote-box-social {
+    background-color: #f0f7ff;
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin: 3rem 0;
+    border-left: 8px solid var(--primary);
+    position: relative;
+}
+
+.quote-box-social::before {
+    content: "“";
+    font-family: var(--font-serif);
+    font-size: 5rem;
+    color: rgba(0, 33, 71, 0.1);
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    line-height: 1;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.comparison-card {
+    padding: 2rem;
+    border-radius: 8px;
+    color: var(--text-main);
+}
+
+.comparison-card.challenge {
+    background-color: #fff5f5;
+    border-top: 4px solid #e74c3c;
+}
+
+.comparison-card.opportunity {
+    background-color: #f0fff4;
+    border-top: 4px solid #27ae60;
+}
+
+.comparison-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* --- Estilos "Microlearning/Cápsulas" para María Martínez --- */
+.capsule-intro {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.capsule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Tarjetas anchas */
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.capsule-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.02);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.capsule-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.capsule-tag {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    align-self: flex-start;
+}
+
+.capsule-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    color: var(--text-main);
+}
+
+.capsule-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.capsule-quote {
+    font-style: italic;
+    color: var(--text-light);
+    border-left: 3px solid var(--accent);
+    padding-left: 1rem;
+    margin-top: auto; /* Empuja al fondo */
+    padding-top: 1rem;
+}
+
+.final-thought {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+    border-radius: 16px;
+    margin-top: 4rem;
+}
+
+.final-thought h2 {
+    color: var(--accent);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* --- Estilos "Cognitivo/Reflexivo" para Melisa --- */
+.principle-box {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 3rem 0;
+    position: relative;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+}
+
+.principle-box h3 {
+    color: var(--primary);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.principle-box::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 2rem;
+    right: 2rem;
+    height: 4px;
+    background: var(--accent);
+}
+
+.reflexion-circle {
+    width: 150px;
+    height: 150px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-family: var(--font-serif);
+    margin: 0 auto 2rem;
+    box-shadow: 0 10px 20px rgba(197, 160, 89, 0.4);
+}
+
+/* --- Estilos "Arquitectónico/Inmersivo" para Tomás Pérez --- */
+.architectural-title {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-size: 2.5rem;
+    letter-spacing: -1px;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #000;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.dark-section {
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    padding: 4rem 2rem;
+    margin: 4rem -50vw; /* Romper el contenedor */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    width: 100vw;
+}
+
+.dark-section h2 {
+    color: var(--white);
+    border-bottom: 1px solid var(--accent);
+}
+
+.dark-section p {
+    color: #bbb;
+    font-weight: 300;
+}
+
+.grid-gallery-arch {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.grid-gallery-arch img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    filter: grayscale(100%); /* Estilo arquitectónico sobrio */
+    transition: filter 0.5s;
+}
+
+.grid-gallery-arch img:hover {
+    filter: grayscale(0%);
+}
+
+
 /* --- Article Page Specific Styles --- */
 
 /* Page Background - Dark Academic Blue */
