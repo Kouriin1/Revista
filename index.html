@@ -25,7 +25,7 @@
             <ul class="nav-links">
                 <li><a href="#hero">Inicio</a></li>
                 <li><a href="#articles">Investigaciones</a></li>
-                <li><a href="#editorial">Editorial</a></li>
+                <li><a href="pages/editorial.html">Editorial</a></li>
             </ul>
         </div>
     </nav>
@@ -33,29 +33,34 @@
     <!-- Hero Section Premium -->
     <header id="hero" class="hero">
         <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <span class="volume-tag"
-                style="color: var(--accent); margin-bottom: 1rem; display: block; letter-spacing: 3px;">INVESTIGACIÓN
-                DESTACADA</span>
-            <h1 class="fade-in-title">Neuroeducación y <br>Competencias Emocionales</h1>
-            <p class="subtitle">Sinergias para el Aprendizaje en Entornos Multimodales.</p>
+        <div class="container hero-container-grid">
+            <!-- Columna Texto -->
+            <div class="hero-text-column">
+                <!-- Removed cintillo as requested -->
+                <h1 class="hero-title animate-in">Neuroeducación <br>y Competencias <span
+                        class="text-gold-gradient">Emocionales</span></h1>
+                <p class="subtitle animate-in">Sinergias para el Aprendizaje en Entornos Multimodales.</p>
 
-            <div class="hero-author-badge"
-                style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
-                <img src="Doctorandos/Adriana%20Campione/Fotos/Foto%20Adriana%20Campione%20S.jpg" alt="Adriana Campione"
-                    style="width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--accent); object-fit: cover;">
-                <div style="text-align: left;">
-                    <span
-                        style="display: block; font-size: 0.8rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px;">Por</span>
-                    <span
-                        style="display: block; font-size: 1.1rem; color: var(--white); font-weight: 700; font-family: var(--font-serif);">Adriana
-                        Campione</span>
+                <div class="hero-author-block animate-in">
+                    <span class="author-label">Investigadora Principal</span>
+                    <div class="author-nameplate">
+                        Adriana Campione
+                    </div>
+                </div>
+
+                <div class="hero-actions animate-in">
+                    <a href="pages/adriana-campione.html" class="btn-primary">Leer Artículo Principal</a>
+                    <a href="#articles" class="btn-secondary">Ver Edición</a>
                 </div>
             </div>
 
-            <div class="hero-actions">
-                <a href="pages/adriana-campione.html" class="btn-primary">Leer Artículo Principal</a>
-                <a href="#articles" class="btn-secondary">Ver Edición Completa</a>
+            <!-- Columna Imagen (Protagonista) -->
+            <div class="hero-image-column">
+                <div class="hero-image-wrapper">
+                    <img src="Doctorandos/Adriana%20Campione/Fotos/Foto%20Adriana%20Campione%20S.jpg"
+                        alt="Adriana Campione" class="main-author-img">
+                    <div class="gold-ring"></div>
+                </div>
             </div>
         </div>
     </header>
@@ -83,23 +88,20 @@
                     <!-- Duplicate items for infinite scroll illusion (3 sets of 5 images = 15 total) -->
 
                     <!-- Set 1 -->
-                    <img src="santa maria img/Escudo-1-400x400.jpg" alt="Escudo USM">
+                    <img src="santa maria img/leon_santa_maria.jpg" alt="León USM">
                     <img src="santa maria img/universidad-santa-maria.jpg" alt="Campus USM">
-                    <img src="santa maria img/USM.png" alt="USM Institucional">
                     <img src="santa maria img/vista_usm.jpeg" alt="Vista Panorámica USM">
                     <img src="santa maria img/usm_logo.png" alt="Logo USM">
 
                     <!-- Set 2 -->
-                    <img src="santa maria img/Escudo-1-400x400.jpg" alt="Escudo USM">
+                    <img src="santa maria img/leon_santa_maria.jpg" alt="León USM">
                     <img src="santa maria img/universidad-santa-maria.jpg" alt="Campus USM">
-                    <img src="santa maria img/USM.png" alt="USM Institucional">
                     <img src="santa maria img/vista_usm.jpeg" alt="Vista Panorámica USM">
                     <img src="santa maria img/usm_logo.png" alt="Logo USM">
 
                     <!-- Set 3 -->
-                    <img src="santa maria img/Escudo-1-400x400.jpg" alt="Escudo USM">
+                    <img src="santa maria img/leon_santa_maria.jpg" alt="León USM">
                     <img src="santa maria img/universidad-santa-maria.jpg" alt="Campus USM">
-                    <img src="santa maria img/USM.png" alt="USM Institucional">
                     <img src="santa maria img/vista_usm.jpeg" alt="Vista Panorámica USM">
                     <img src="santa maria img/usm_logo.png" alt="Logo USM">
                 </div>
@@ -107,11 +109,30 @@
         </div>
     </section>
 
-    <footer style="position: relative;">
+    <footer>
         <div class="container footer-content">
-            <img src="santa maria img/loguito.png" alt="Logo Santa María" class="footer-logo-corner">
-            <div class="footer-brand">Revista TIC</div>
-            <p>&copy; 2026 Doctorado en Ciencias de la Educación.</p>
+            <!-- Left: Logo Block -->
+            <div class="footer-logo-block">
+                <img src="santa maria img/loguito.png" alt="Logo Santa María" class="footer-logo-img">
+                <p class="footer-text" style="color:var(--white); font-weight:700;">Universidad Santa María</p>
+            </div>
+
+            <!-- Center: Info Block -->
+            <div class="footer-info-block">
+                <div class="footer-brand">Tecnología de la Información y Comunicación</div>
+                <p class="footer-text">&copy; 2026 Doctorado en Ciencias de la Educación.</p>
+                <p class="footer-text" style="opacity: 0.5; font-size: 0.8rem;">Caracas, Venezuela</p>
+            </div>
+
+            <!-- Right: Tutor Block -->
+            <div class="footer-tutor-block">
+                <div class="tutor-info">
+                    <span class="tutor-label">Tutor Influyente</span>
+                    <span class="tutor-name">Dr. Omar Alviares</span>
+                </div>
+                <!-- Image Path verified from directory list -->
+                <img src="img profe_Omar/Profe_Omar.jpeg" alt="Dr. Omar Alviares" class="tutor-img">
+            </div>
         </div>
     </footer>
 
