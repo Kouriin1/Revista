@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revista TIC 2026-1 | Doctorado</title>
-    
+
     <!-- Google Fonts: Playfair Display (Serif Premium) & Lato (Sans Moderno) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <!-- Navegación -->
@@ -30,11 +34,28 @@
     <header id="hero" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="fade-in-title">Donde la Innovación <br>Encuentra su Método</h1>
-            <p class="subtitle">Explorando las fronteras de la tecnología educativa y la sociedad digital.</p>
+            <span class="volume-tag"
+                style="color: var(--accent); margin-bottom: 1rem; display: block; letter-spacing: 3px;">INVESTIGACIÓN
+                DESTACADA</span>
+            <h1 class="fade-in-title">Neuroeducación y <br>Competencias Emocionales</h1>
+            <p class="subtitle">Sinergias para el Aprendizaje en Entornos Multimodales.</p>
+
+            <div class="hero-author-badge"
+                style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
+                <img src="Doctorandos/Adriana%20Campione/Fotos/Foto%20Adriana%20Campione%20S.jpg" alt="Adriana Campione"
+                    style="width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--accent); object-fit: cover;">
+                <div style="text-align: left;">
+                    <span
+                        style="display: block; font-size: 0.8rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px;">Por</span>
+                    <span
+                        style="display: block; font-size: 1.1rem; color: var(--white); font-weight: 700; font-family: var(--font-serif);">Adriana
+                        Campione</span>
+                </div>
+            </div>
+
             <div class="hero-actions">
-                <a href="#articles" class="btn-primary">Leer Edición</a>
-                <span class="volume-tag">Vol. 1 - 2026</span>
+                <a href="pages/adriana-campione.html" class="btn-primary">Leer Artículo Principal</a>
+                <a href="#articles" class="btn-secondary">Ver Edición Completa</a>
             </div>
         </div>
     </header>
@@ -53,13 +74,48 @@
         </div>
     </main>
 
-    <footer>
+    <!-- Santa Maria Campus Carousel -->
+    <section class="campus-showcase">
+        <div class="container">
+            <h3 class="campus-title">Nuestra Alma Mater - Universidad Santa María</h3>
+            <div class="campus-carousel">
+                <div class="carousel-track">
+                    <!-- Duplicate items for infinite scroll illusion (3 sets of 5 images = 15 total) -->
+
+                    <!-- Set 1 -->
+                    <img src="santa maria img/Escudo-1-400x400.jpg" alt="Escudo USM">
+                    <img src="santa maria img/universidad-santa-maria.jpg" alt="Campus USM">
+                    <img src="santa maria img/USM.png" alt="USM Institucional">
+                    <img src="santa maria img/vista_usm.jpeg" alt="Vista Panorámica USM">
+                    <img src="santa maria img/usm_logo.png" alt="Logo USM">
+
+                    <!-- Set 2 -->
+                    <img src="santa maria img/Escudo-1-400x400.jpg" alt="Escudo USM">
+                    <img src="santa maria img/universidad-santa-maria.jpg" alt="Campus USM">
+                    <img src="santa maria img/USM.png" alt="USM Institucional">
+                    <img src="santa maria img/vista_usm.jpeg" alt="Vista Panorámica USM">
+                    <img src="santa maria img/usm_logo.png" alt="Logo USM">
+
+                    <!-- Set 3 -->
+                    <img src="santa maria img/Escudo-1-400x400.jpg" alt="Escudo USM">
+                    <img src="santa maria img/universidad-santa-maria.jpg" alt="Campus USM">
+                    <img src="santa maria img/USM.png" alt="USM Institucional">
+                    <img src="santa maria img/vista_usm.jpeg" alt="Vista Panorámica USM">
+                    <img src="santa maria img/usm_logo.png" alt="Logo USM">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="position: relative;">
         <div class="container footer-content">
+            <img src="santa maria img/loguito.png" alt="Logo Santa María" class="footer-logo-corner">
             <div class="footer-brand">Revista TIC</div>
-            <p>&copy; 2026 Doctorado en Innovación y Tecnología.</p>
+            <p>&copy; 2026 Doctorado en Ciencias de la Educación.</p>
         </div>
     </footer>
 
     <script src="main.js"></script>
 </body>
+
 </html>
