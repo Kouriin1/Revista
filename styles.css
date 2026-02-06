@@ -444,9 +444,32 @@ a {
 footer {
     background-color: var(--primary);
     color: var(--white);
-    padding: 4rem 0;
+    padding: 3rem 0;
     text-align: center;
+    position: relative;
     margin-top: 5rem;
+}
+
+/* Footer Corner Logo */
+.footer-logo-corner {
+    position: absolute;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Center vertically relative to footer height */
+    height: 50px;
+    /* Adjust size as needed */
+    width: auto;
+    filter: brightness(0) invert(1);
+    /* Make it white to match footer text if png is colored */
+    opacity: 0.9;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
 .footer-brand {
@@ -456,7 +479,109 @@ footer {
     color: var(--accent);
 }
 
-/* --- Responsive --- */
+/* --- Santa Maria Campus Carousel --- */
+.campus-showcase {
+    background-color: var(--card-bg);
+    /* Or a specific light/dark offset */
+    padding: 3rem 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.campus-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+}
+
+.campus-carousel {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.campus-carousel::before,
+.campus-carousel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+}
+
+.campus-carousel::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg-body), transparent);
+}
+
+.campus-carousel::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg-body), transparent);
+}
+
+.carousel-track {
+    display: flex;
+    gap: 3rem;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+    /* Slow smooth scroll */
+}
+
+/* Removed hover pause as requested */
+/* .carousel-track:hover { animation-play-state: paused; } */
+
+.carousel-track img {
+    height: 120px;
+    /* Standardize height */
+    width: auto;
+    object-fit: contain;
+    /* Removed grayscale and opacity for full color */
+    filter: none;
+    opacity: 1;
+    transition: transform 0.4s ease;
+    cursor: default;
+    /* Ensure no pointer cursor */
+}
+
+.carousel-track img:hover {
+    /* Removed grayscale toggle */
+    transform: scale(1.05);
+    /* Keep slight scale for liveliness, optional */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+    /* Move half way (since we double content) */
+}
+
+/* --- Responsive Carousel --- */
+@media (max-width: 768px) {
+    .carousel-track img {
+        height: 80px;
+        gap: 1.5rem;
+    }
+
+    /* Footer logo adjustments for mobile */
+    .footer-logo-corner {
+        position: static;
+        /* Stack it normally on mobile */
+        transform: none;
+        margin-bottom: 1rem;
+    }
+}
+
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2.5rem;
