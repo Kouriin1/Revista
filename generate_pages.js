@@ -76,8 +76,7 @@ const templateEnd = `
     </main>
 
     <footer>
-        <div class="container footer-content">
-            <div class="footer-brand">Revista TIC</div>
+        <div class="container footer-content-clean">
             <p>&copy; 2026 Doctorado en Innovación y Tecnología.</p>
         </div>
     </footer>

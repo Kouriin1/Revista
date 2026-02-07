@@ -1174,24 +1174,108 @@ footer {
     font-family: var(--font-serif);
 }
 
+/* --- ESTILO PROFESIONAL BIOGRAFIA AUTOR --- */
 .author-bio {
-    background: #f8f9fa;
-    padding: 3rem;
-    border-radius: 4px;
     margin-top: 6rem;
-    border-top: 1px solid var(--accent);
-    border-bottom: 1px solid var(--accent);
+    padding-top: 3rem;
+    /* Clean separation */
+    border-top: 1px solid rgba(0, 33, 71, 0.1);
+    background: transparent;
+    /* Remove old gray box */
+    border-radius: 0;
+    border-bottom: none;
     clear: both;
-    /* Asegura que baje después de las imágenes flotantes */
 }
 
-.author-bio h3 {
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
-    text-transform: uppercase;
+.author-section-title {
+    font-family: var(--font-serif);
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
     letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
+/* Decorative line under title */
+.author-section-title::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 2px;
+    background: var(--accent);
+    margin: 0.5rem auto 0;
+}
+
+.author-card {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: #FFFFFF;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px -10px rgba(0, 33, 71, 0.1);
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    /* Subtle gold border */
+    max-width: 800px;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+.author-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px -10px rgba(0, 33, 71, 0.15);
+}
+
+.author-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--white);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
+}
+
+.author-info {
+    flex: 1;
+}
+
+.author-name {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.author-desc {
+    color: #333333 !important; /* Force dark text regardless of theme */
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-weight: 400; /* Slightly bolder for readability */
+}
+
+/* Mobile responsive for Author Card */
+@media (max-width: 768px) {
+    .author-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .author-section-title {
+        width: 100%;
+        font-size: 1.3rem;
+    }
+}
+
+/* Old styling override/compat mostly replaced above but kept cleaner */
 .references-section {
     margin-top: 4rem;
     padding-top: 2rem;
@@ -1987,7 +2071,6 @@ body.article-page {
         flex-direction: column;
         gap: 0.5rem;
     }
-    }
 
     .article-container {
         padding: 3rem 1.5rem;
@@ -1999,4 +2082,17 @@ body.article-page {
         padding: 8px 15px;
         font-size: 0.7rem;
     }
+}
+
+/* Clean Footer for Article Pages */
+.footer-content-clean {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 0;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
 }
