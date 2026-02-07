@@ -8,7 +8,6 @@ body.magazine-mode-active {
     background: #111; /* Fondo oscuro cinematográfico */
 }
 
-body.magazine-mode-active .navbar,
 body.magazine-mode-active .article-header,
 body.magazine-mode-active .back-link,
 body.magazine-mode-active footer,

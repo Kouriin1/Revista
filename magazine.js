@@ -176,3 +176,6 @@ function disableMagazineMode() {
     const wrapper = document.getElementById('magazine-wrapper');
     if (wrapper) wrapper.remove();
 }
+
+// Mobile Navigation Toggle logic removed - handled in main.js
+

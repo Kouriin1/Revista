@@ -18,6 +18,13 @@
     <nav class="navbar scrolled">
         <div class="container nav-container">
             <div class="logo">REVISTA <span class="highlight">TIC</span> 2026-1</div>
+
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
             <ul class="nav-links">
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="../index.html#articles">Investigaciones</a></li>
@@ -28,7 +35,7 @@
 
     <header class="article-header" style="padding-bottom: 2rem;">
         <div class="container">
-            <h1 style="font-size: 3.5rem;">La Multimodalidad y la Humanización Digital en la Universidad Contemporánea
+            <h1 class="article-title-main">La Multimodalidad y la Humanización Digital en la Universidad Contemporánea
             </h1>
             <div class="article-meta">
                 <!-- Using placeholder if user didn't provide specific image path, or reusing generic icon if needed. 
@@ -98,19 +105,11 @@
 
     <!-- Usamos el mismo footer que en index pero path relativo -->
     <footer>
-        <div class="container footer-content">
-            <!-- Left: Logo Block -->
-            <div class="footer-logo-block" style="text-align: center;"> <!-- Centered for this simple page -->
-                <img src="../santa maria img/loguito.png" alt="Logo Santa María" class="footer-logo-img">
-                <p class="footer-text" style="color:var(--white); font-weight:700;">Universidad Santa María</p>
-            </div>
-
-            <div class="footer-info-block">
-                <div class="footer-brand">Tecnología de la Información y Comunicación</div>
-                <p>&copy; 2026 Doctorado en Ciencias de la Educación.</p>
-            </div>
+        <div class="container footer-content-clean">
+            <p>&copy; 2026 Doctorado en Ciencias de la Educación.</p>
         </div>
     </footer>
+    <script src="../main.js"></script>
 </body>
 
 </html>
