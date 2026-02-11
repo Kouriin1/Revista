@@ -161,40 +161,48 @@ a {
     }
 
     .nav-links {
-        display: flex !important; /* Force flex display */
+        display: flex !important;
+        /* Force flex display */
         position: fixed;
         top: 0;
         right: 0;
         width: 100%;
         height: 100vh;
-        background: #00152e; /* Hardcoded Oxford Blue */
+        background: #00152e;
+        /* Hardcoded Oxford Blue */
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 2rem;
         transition: transform 0.4s ease-in-out;
-        transform: translateX(100%); /* Hide off-screen */
+        transform: translateX(100%);
+        /* Hide off-screen */
         z-index: 5500;
-        pointer-events: none; /* Prevent clicks when hidden */
+        pointer-events: none;
+        /* Prevent clicks when hidden */
     }
 
     .nav-links.active {
-        transform: translateX(0); /* Slide in */
+        transform: translateX(0);
+        /* Slide in */
         pointer-events: auto;
     }
 
     .nav-links a {
         font-size: 1.5rem;
-        color: #FFFFFF !important; /* Force White */
+        color: #FFFFFF !important;
+        /* Force White */
     }
-    
+
     /* Animation for Hamburger to X */
     .menu-toggle.open .bar:nth-child(1) {
         transform: rotate(45deg) translate(5px, 6px);
     }
+
     .menu-toggle.open .bar:nth-child(2) {
         opacity: 0;
     }
+
     .menu-toggle.open .bar:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -6px);
     }
@@ -1029,8 +1037,8 @@ footer {
 }
 
 .article-author-img {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--accent);
@@ -1120,6 +1128,8 @@ footer {
     margin-bottom: 1.5rem;
     text-align: justify;
     text-justify: inter-word;
+    font-size: 1.2rem !important;
+    /* Force consistent size */
 }
 
 /* Imágenes por defecto (Móvil y base) */
@@ -1132,6 +1142,7 @@ footer {
 .article-image img {
     max-width: 100%;
     height: auto;
+    /* Prevent distortion */
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     /* Sombra más sutil y elegante */
@@ -1254,10 +1265,12 @@ footer {
 }
 
 .author-desc {
-    color: #333333 !important; /* Force dark text regardless of theme */
+    color: #333333 !important;
+    /* Force dark text regardless of theme */
     font-size: 1.05rem;
     line-height: 1.6;
-    font-weight: 400; /* Slightly bolder for readability */
+    font-weight: 400;
+    /* Slightly bolder for readability */
 }
 
 /* Mobile responsive for Author Card */
@@ -2058,15 +2071,18 @@ body.article-page {
 /* Responsive Article */
 @media (max-width: 768px) {
     .article-header {
-        padding: 5rem 1rem 3rem; /* Reduced padding */
+        padding: 5rem 1rem 3rem;
+        /* Reduced padding */
     }
 
-    .article-header h1, 
-    .article-title-main { /* Targeting H1 specifically */
-        font-size: 1.8rem !important; /* Smaller size for mobile */
+    .article-header h1,
+    .article-title-main {
+        /* Targeting H1 specifically */
+        font-size: 1.8rem !important;
+        /* Smaller size for mobile */
         line-height: 1.3;
     }
-    
+
     .article-meta {
         flex-direction: column;
         gap: 0.5rem;
